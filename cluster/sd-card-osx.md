@@ -1,19 +1,19 @@
 
-# Install Raspbian on an SD card using MacOS
+## Install Raspbian on an SD card using MacOS
 
 * The instruction followed is at <https://www.raspberrypi.org/documentation/installation/installing-images/>
 * Operating system: MacOS
 
-## Method1 - Without using NOOBS
+### Method1 - Without using NOOBS
 
-### Download 
+#### Download 
 
 * Download page is <https://www.raspberrypi.org/downloads/>
 * Choose Raspbian instead of NOOBS
 * Within raspbian, there are two versions, RASPBIAN STRETCH WITH DESKTOP and RASPBIAN STRETCH 
 LITE. The first one was downloaded (full version)
 
-### Writing an image to the SD card 
+#### Writing an image to the SD card 
 
 Some steps are copied from <https://www.raspberrypi.org/documentation/installation/installing-images/>
 
@@ -25,13 +25,13 @@ card.
 * Review selections and click `Flash!` to begin writing data to the SD card.
 
 
-## Method2 - Using NOOBS
+### Method2 - Using NOOBS
 
-### Download
+#### Download
 
 * download page is <https://www.raspberrypi.org/downloads/noobs/>
 
-### How to install NOOBS on an SD card
+#### How to install NOOBS on an SD card
 
 Some steps are copied from <ttps://www.raspberrypi.org/documentation/installation/noobs.md>
 
