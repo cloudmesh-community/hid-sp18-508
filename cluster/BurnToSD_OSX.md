@@ -1,22 +1,21 @@
 
 # Install Raspbian on an SD card using MacOS
 
-* The instruction followed is at [instructions](https://www.raspberrypi
-.org/documentation/installation/installing-images/)
+* The instruction followed is at <https://www.raspberrypi.org/documentation/installation/installing-images/>
 * Operating system: MacOS
 
 # Method1 - Without using NOOBS
 
 ## Download 
 
-* Download page is [here](https://www.raspberrypi.org/downloads/)
+* Download page is <https://www.raspberrypi.org/downloads/>
 * Choose Raspbian instead of NOOBS
 * Within raspbian, there are two versions, RASPBIAN STRETCH WITH DESKTOP and RASPBIAN STRETCH 
 LITE. The first one was downloaded (full version)
 
 ## Writing an image to the SD card 
 
-(some steps are copied from [instructions](https://www.raspberrypi.org/documentation/installation/installing-images/))
+(some steps are copied from <https://www.raspberrypi.org/documentation/installation/installing-images/>
 * Followed the instructions at the beginning, download and install [Etcher](https://etcher.io/)
 * Connect an SD card reader with the SD card inside 
 * Open Etcher and select from hard drive the Raspberry Pi .img or  .zip file to write to the SD 
