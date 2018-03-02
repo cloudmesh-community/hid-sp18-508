@@ -16,7 +16,7 @@ LITE. The first one was downloaded (full version)
 ## Writing an image to the SD card 
 
 (some steps are copied from <https://www.raspberrypi.org/documentation/installation/installing-images/>
-* Followed the instructions at the beginning, download and install [Etcher](https://etcher.io/)
+* Followed the instructions at the beginning, download and install Etcher <https://etcher.io/>
 * Connect an SD card reader with the SD card inside 
 * Open Etcher and select from hard drive the Raspberry Pi .img or  .zip file to write to the SD 
 card.
@@ -28,11 +28,11 @@ card.
 
 ## Download
 
-* download page is [here](https://www.raspberrypi.org/downloads/noobs/)
+* download page is <https://www.raspberrypi.org/downloads/noobs/>
 
 ## How to install NOOBS on an SD card
 
-(some steps are copied from [instructions](https://www.raspberrypi.org/documentation/installation/noobs.md))
+(some steps are copied from <ttps://www.raspberrypi.org/documentation/installation/noobs.md>
 Once you've downloaded the NOOBS zip file, you'll need to copy the contents to a formatted SD 
 card on your computer. Here are the detailed steps: 
 * Format an SD card which is 8GB or larger as FAT. 
