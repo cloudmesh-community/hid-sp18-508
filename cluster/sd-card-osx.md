@@ -4,13 +4,16 @@
 * Some steps are copied from <https://www.raspberrypi.org/documentation/installation/installing-images/>
 * Some steps are copied from <https://www.raspberrypi.org/documentation/installation/noobs.md>
 
+### Install Etcher
+
+* Follow the instructions at the beginning, download and install Etcher https://etcher.io/
+
 ### Install Rasbian 
 
 * Download The Rasbian OS from <https://www.raspberrypi.org/downloads/>
-* Make sur eto select the Raspbian OS and not NOOBS
+* Make sure to select the Raspbian OS and not NOOBS
 * Within raspbian, there are two versions, RASPBIAN STRETCH WITH DESKTOP and RASPBIAN STRETCH 
   LITE. The first one was downloaded (full version)
-* Followed the instructions at the beginning, download and install Etcher <https://etcher.io/>
 * Connect an SD card reader with the SD card inside 
 * Open Etcher and select from hard drive the Raspberry Pi `.img` or  `.zip` file to write to the 
   SD card.
