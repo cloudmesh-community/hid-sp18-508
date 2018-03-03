@@ -22,7 +22,7 @@
 
 ### Install Rssbian via NOOBS
 
-* download page is <https://www.raspberrypi.org/downloads/noobs/>
+* Download page is <https://www.raspberrypi.org/downloads/noobs/>
 * Once you've downloaded the `NOOBS` zip file, you'll need to copy the contents to a formatted SD 
   card on your computer. Here are the detailed steps: 
 * Format an SD card which is 8GB or larger as FAT. 
