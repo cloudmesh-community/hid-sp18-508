@@ -37,9 +37,13 @@
 \begin{NOTE}
 
 The content was reorganized so we can better evaluate what needs to be done next. 
+\begin{itemize}
 
-1. We have a much more extensive discussion of this already in the handbook. We need to refer to it with a ref and label
-2. Documentation does not goo into any motivation about why to use NOOBS or not which was explicitly asked for
+\item We have a much more extensive discussion of this already in the handbook. We need to refer to it with a ref and label
+
+\item Documentation does not goo into any motivation about why to use NOOBS or not which was explicitly asked for
    and is actually discussed on the NOOBS web page.
+
+\end{itemize}
 
 \end{NOTE}
