@@ -33,3 +33,13 @@
   than the folder itself.
 * On first boot, the `RECOVERY` FAT partition will be automatically resized to a minimum, and a 
   list of OSes that are available to install will be displayed.
+  
+\begin{NOTE}
+
+The content was reorganized so we can better evaluate what needs to be done next. 
+
+1. We have a much more extensive discussion of this already in the handbook. We need to refer to it with a ref and label
+2. Documentation does not goo into any motivation about why to use NOOBS or not which was explicitly asked for
+   and is actually discussed on the NOOBS web page.
+
+\end{NOTE}
