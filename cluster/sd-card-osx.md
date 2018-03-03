@@ -37,6 +37,7 @@
 \begin{NOTE}
 
 The content was reorganized so we can better evaluate what needs to be done next. 
+
 \begin{itemize}
 
 \item We have a much more extensive discussion of this already in the handbook. We need to refer to it with a ref and label
