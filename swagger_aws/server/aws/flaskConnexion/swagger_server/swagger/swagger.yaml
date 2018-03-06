@@ -1,0 +1,36 @@
+---
+swagger: "2.0"
+info:
+  version: "2017-11-17T04:40:23Z"
+  title: "MyApiWithVpcLink"
+host: "p3wocvip9a.execute-api.us-west-2.amazonaws.com"
+basePath: "/test"
+schemes:
+- "https"
+paths:
+  /:
+    get:
+      operationId: "root_get"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+        uri: "http://myApi.example.com"
+        passthroughBehavior: "when_no_match"
+        connectionType: "VPC_LINK"
+        connectionId: "${stageVariables.vpcLinkId}"
+        httpMethod: "GET"
+        type: "http_proxy"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"
