@@ -1,13 +1,13 @@
 \section{openVZ}
 
-OpenVZ is a container-based virtualization for Linux. OpenVZ creates
-multiple secure, isolated Linux containers (otherwise known as VEs or
-VPSs) on a single physical server enabling better server utilization
-and ensuring that applications do not conflict. Each container
-performs and executes exactly like a stand-alone server; a container
-can be rebooted independently and have root access, users, IP
-addresses, memory, processes, files, applications, system libraries
-and configuration files.
+OpenVZ is a container-based virtualization for Linux~\cite{www-openvz}.
+OpenVZ is mainly composed of three parts: the kernel, an set of tools
+and operating system templates.
 
-OpenVZ is free open source software, available under GNU
-GPL~\cite{www-openvz}.
+OpenVZ applies to many places, including server consolidation, hosting,
+development and testing, security and education~\cite{www-openvz-intro}. 
+If you have a lot of Linux servers that are not being fully utilized, 
+OpenVZ can be used to integrate them into a few (or possibly one) 
+physical machines. However, OpenVZ is completely command-oriented 
+and currently does not include any GUI-based applications. It may not
+be suitable for those who are afraid of a shell prompt.
