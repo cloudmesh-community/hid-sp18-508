@@ -1,14 +1,13 @@
 
 ## MongoDB Tutorial
 
-* Some steps are copied from <https://www.raspberrypi.org/documentation/installation/installing-images/>
-* Some steps are copied from <https://www.raspberrypi.org/documentation/installation/noobs.md>
+* Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
 
 ### Overview
 
 * MongoDB is an open-source document database and NoSQL database, which is written in C++. A document is a set of key-value pairs. The following shows the difference between RDBMS terminology and MongoDB. 
-	| RDBMS       | MongoDB | 
-    | --------   | -----:   | 
+    | RDBMS      | MongoDB | 
+    | -----------| -------- |
     | Database   | Database | 
     | Table      | Collection|
     | Tuple/Row  | Document |
