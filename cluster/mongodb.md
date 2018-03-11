@@ -13,8 +13,8 @@
     | column     | Field    |
     | Table Join | Embedded Documents|
     | Primary Key| Primary Key| 
-
-* MongoDB is an open-source document database and NoSQL database, which is written in C++. A document is a set of key-value pairs. The following shows the difference between RDBMS terminology and MongoDB. 
+* MongoDB is an open-source document database and NoSQL database, which is written in C++. A document is a set of key-value pairs. The table shows the difference between RDBMS terminology and MongoDB.
+ 
  
 
 ### Advantages of MongoDB over RDBMS 
@@ -46,17 +46,3 @@
 * Restart MongoDB
 > sudo service mongodb restart
   
-\begin{NOTE}
-
-The content was reorganized so we can better evaluate what needs to be done next. 
-
-\begin{itemize}
-
-\item We have a much more extensive discussion of this already in the handbook. We need to refer to it with a ref and label
-
-\item Documentation does not goo into any motivation about why to use NOOBS or not which was explicitly asked for
-   and is actually discussed on the NOOBS web page.
-
-\end{itemize}
-
-\end{NOTE}
