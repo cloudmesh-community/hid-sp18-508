@@ -8,14 +8,14 @@
 
 ### Overview
 
-    | RDBMS      | MongoDB | 
-    | -----------| -------- |
-    | Database   | Database | 
-    | Table      | Collection|
-    | Tuple/Row  | Document |
-    | column     | Field    |
-    | Table Join | Embedded Documents|
-    | Primary Key| Primary Key| 
+| RDBMS      | MongoDB | 
+| -----------| -------- |
+| Database   | Database | 
+| Table      | Collection|
+| Tuple/Row  | Document |
+| column     | Field    |
+| Table Join | Embedded Documents|
+| Primary Key| Primary Key| 
     
 * MongoDB is an open-source document database and NoSQL database, which is written in C++. A document is a set of key-value pairs. The table shows the difference between RDBMS terminology and MongoDB.
  
