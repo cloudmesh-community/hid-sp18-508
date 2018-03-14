@@ -1,10 +1,13 @@
 
 ## MongoDB Tutorial
 
+** THIS IS A DRAFT AND NOT COMPLETED YET **
+
 * Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
 
 
 ### Overview
+
     | RDBMS      | MongoDB | 
     | -----------| -------- |
     | Database   | Database | 
@@ -13,6 +16,7 @@
     | column     | Field    |
     | Table Join | Embedded Documents|
     | Primary Key| Primary Key| 
+    
 * MongoDB is an open-source document database and NoSQL database, which is written in C++. A document is a set of key-value pairs. The table shows the difference between RDBMS terminology and MongoDB.
  
  
