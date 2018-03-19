@@ -1,0 +1,169 @@
+\title{Hadoop}
+
+
+
+\author{Yue Guo}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{Smith Research Center}
+  \city{Bloomington} 
+  \state{IN} 
+  \postcode{47408}
+  \country{USA}}
+\email{yueguo@iu.edu}
+
+
+\author{Gregor von Laszewski}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{Smith Research Center}
+  \city{Bloomington} 
+  \state{IN} 
+  \postcode{47408}
+  \country{USA}}
+\email{laszewski@gmail.com}
+
+
+
+\begin{abstract}
+This paper provides a tutorial for Hadoop. Introduce what is Hadoop, how to use Hadoop and why using Hadoop.
+\end{abstract}
+
+\keywords{Hadoop, MapReduce, HDFS}
+
+
+\maketitle
+
+\section{Organization}
+The document is to introduce Hadoop from three levels, the introduction of Hadoop and its  two main parts: MapReduce and HDFS. Then, show the application and features about Hadoop, which can tell the advantage of Hadoop. And Finally introduce the usecase of Hadoop and the environment setup.
+
+\section{Introduction}
+Hadoop is a distributed computing open source framework of the Apache open source organization, It has been used on many large websites such as Amazon, Facebook and Yahoo. The most important part of Hadoop framework is: MapReduce and HDFS. The idea of MapReduce has been widely spread by a Google's paper. HDFS is the abbreviation of Hadoop Distributed File System and provides base-level support for distributed computing storage.
+
+
+\section{MapReduce}
+We can see from MapReduce's name itself, which has two verbs "Map" and "Reduce". "Map" is to break down a task into multiple tasks, "Reduce" is to sum the results of multiple tasks and come up with the final analysis. This is not a new idea. 
+
+``MapReduce program executes in three stages, namely map stage, shuffle stage, and reduce stage.
+
+Map stage : The map or mapper?s job is to process the input data. Generally the input data is in the form of file or directory and is stored in the Hadoop file system (HDFS). The input file is passed to the mapper function line by line. The mapper processes the data and creates several small chunks of data.
+
+Reduce stage : This stage is the combination of the Shuffle stage and the Reduce stage. The Reducer?s job is to process the data that comes from the mapper. After processing, it produces a new set of output, which will be stored in the HDFS''~\cite{mapreduce}.
+A architecture of Hadoop shown in Figure~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]{../images/mapReduce.jpg}
+  \caption{MapReduce Architecture}\label{f:fly}
+\end{figure}
+
+\section{HDFS}
+HDFS is the storage foundation for distributed computing. Hadoop's distributed file system is very similar with other distributed file systems. The basic characteristics of a distributed file system are: 
+
+A single namespace for the entire cluster.
+Data Consistency.
+Suitable for write once and read multiple times models, the client cannot see the file until the file is successfully created. The file will be split into multiple file blocks, each file block is allocated to the data node, and according to the configuration, the file block will be copied to ensure data security.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]{../images/HDFS.jpg}
+  \caption{HDFS Architecture}\label{f:hdfs}
+\end{figure}
+
+
+The above figure~\ref{f:hdfs} shows the three important roles of HDFS: NameNode, DataNode, and Client. The NameNode can be regarded as a manager in a distributed file system and is mainly responsible for managing the file system namespace, cluster configuration information, and storage block copy. The NameNode stores the Meta-data of the file system in memory. This information mainly includes the file information, the file block information of each file, and the information of each file block on the DataNode. DataNode is the basic unit of file storage. It stores the Block in the local file system, saves the Meta-data of the Block, and periodically sends all existing Block information to the NameNode. Client is an application that needs to obtain distributed file system files. 
+
+Several design features of HDFS:
+Block placement: It is not configured by default. A Block will have three backups, one on the DataNode specified by the NameNode, another on the DataNode that is not the same Rack as the specified DataNode, and the last on the DataNode on the same Rack as the specified DataNode. Backup is nothing more than data security, considering the failure of the same Rack and the problem of data copy performance between different Racks.
+
+
+Data inspection: CRC32 is used for data inspection. When the file Block is written, in addition to writing the data, the inspection information is also written, and it is necessary to read it after reading it.
+
+Data pipeline write: When the client wants to write a file to the DataNode, the client first reads a Block and writes it to the first DataNode, then the first DataNode passes it to the backup DataNode until all the DataNode that need to be written to this Block is successfully written and the client will continue to start writing next Block.
+
+
+NameNode is a single point: if it fails, the task processing information will be recorded in the local file system and the remote file system.
+
+\section{Hadoop}
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]{../images/hadoop.jpg}
+  \caption{Hadoop Architecture }\label{f:hadoop}
+\end{figure}
+
+
+The above figure~\ref{f:hadoop} shows in the Hadoop system, there will be a Master, responsible for the work of NameNode and JobTracker. JobTracker's main responsibility is to start, track and schedule the execution of each Slave task. There will be more than one Slave, each Slave usually has the function of DataNode and is responsible for the TaskTracker's work. TaskTracker performs Map tasks and Reduce tasks in conjunction with local data based on application requirements.
+
+\section{Application}
+The most suitable is the analysis of massive data. In fact, Google first proposed MapReduce for mass data analysis. At the same time, HDFS was originally developed for search engine implementation and was later used in distributed computing frameworks. Mass data is divided into multiple nodes and then calculated by each node in parallel, and the results obtained are merged into the output. At the same time, the output of the first stage can be used as the input for the next stage of calculation. Therefore, it can be imagined that a tree-structured distributed computing map has different outputs at different stages. Simultaneous parallel and serial calculations can also be very well handled efficiently in distributed cluster resources.
+
+Do not use double quotes \verb|"| but use \LaTeX\ ``quotes''. Quotes
+{\bf MUST} not be used to highlight works. Quotes are {\bf STRICTLY}
+used for quoting text from sources with citation following. If we find
+a quote that is not followed by a citation we will return the paper
+without review.
+
+\section{Features}
+Extensiblity: Both storage scalability and computing scalability are the most important part of Hadoop's design.
+Economy: The framework can run on any ordinary PC.
+Reliablity: The backup and recovery mechanism of distributed file systems and the task monitoring of MapReduce ensure the reliability of distributed processing.
+Efficience: The efficient data exchange implementation of the distributed file system and the combination of MapReduce and Local Data processing make basic preparations for efficient processing of large amounts of information.
+
+
+\section{Environment Setup}
+``Before installing Hadoop into the Linux environment,  Linux using ssh (Secure Shell) is needed. At the beginning, it is recommended to create a separate user for Hadoop to isolate Hadoop file system from Unix file system. SSH setup is required to do different operations on a cluster such as starting, stopping, distributed daemon shell operations. To authenticate different users of Hadoop, it is required to provide public/private key pair for a Hadoop user and share it with different users. Java is the main prerequisite for Hadoop. Download and extract Hadoop 2.4.1 from Apache software foundation. 
+
+Once you have downloaded Hadoop, Hadoop cluster can be operated in one of the three supported modes:
+
+Local/Standalone Mode : After downloading Hadoop in your system, by default, it is configured in a standalone mode and can be run as a single java process.
+
+Pseudo Distributed Mode : It is a distributed simulation on single machine. Each Hadoop daemon such as hdfs, yarn, MapReduce etc., will run as a separate java process. This mode is useful for development.
+
+Fully Distributed Mode : This mode is fully distributed with minimum two or more machines as a cluster. We will come across this mode in detail in the coming chapters'''~\cite{hadoop}. 
+
+
+\section{Usecase}
+Yahoo is the biggest proponent of Hadoop. As of 2012, Yahoo's Hadoop machines have more than 420,000 total nodes and more than 100,000 core CPUs are running Hadoop. The largest single Master node cluster has 4,500 nodes (two quad-core CPUboxes on each node, 4 x 1TB disks, and 16GB RAM). The total cluster storage capacity is greater than 350PB, and the number of submitted jobs per month exceeds 10 million. Over 60\% of Hadoop jobs in Pig are submitted using Pig.
+
+Yahoo's Hadoop application mainly includes the following aspects:
+
+Support advertising system
+
+User Behavior Analysis 
+
+Support Web search
+
+Anti-spam system
+
+Member abuse
+
+Agile content
+
+Personalized recommendation
+
+
+Facebook, as a world-renowned social networking site, has more than 300 million active users, of which approximately 30 million users update their status at least once a day; users upload more than 1 billion photos and 10 million videos per month; and Weeks share 1 billion items, including logs, links, news, Weibo, etc. Therefore, the amount of data that Facebook needs to store and process is enormous. 4TB of compressed data is added every day, 135TB of data is scanned, and more than 7500 Hive tasks are performed on the cluster. It takes 80,000 calculations per hour, so it is high. The cloud platform for performance is very important to Facebook, and Facebook mainly uses the Hadoop platform for log processing, recommendation systems, and data warehousing.
+
+Facebook stores data on a data warehouse built with Hadoop/Hive. The data warehouse has 4,800 cores and 5.5 PB of storage. Each node can store 12 TB of data. At the same time, it also has a two-tier network topology. As shown below. The MapReduce cluster in Facebook is dynamically changing. It can dynamically move based on load conditions and configuration information between cluster nodes.
+
+
+\section{Conclusion}
+Hadoop mainly consists of two parts: 1. HDFS, responsible for storage, distributed file system; 2. MapReduce, parallel processing framework, used to achieve task decomposition and scheduling. 
+
+There are two main types of nodes in hadoop:
+
+NameNode: management node, used to store file metadata, including a mapping table of files and data blocks; a mapping table of data blocks and data nodes.
+
+DataNode: Work node, used to store the real data block.
+
+
+And there are many applications on Hadoop.
+
+
+\begin{acks}
+
+  The authors would like to thank Dr.~Gregor~von~Laszewski for his
+  support and suggestions to write this paper.
+
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{report} 
+
