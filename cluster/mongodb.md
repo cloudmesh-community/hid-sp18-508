@@ -40,14 +40,19 @@ Run the following command to import the MongoDB public GPG key −
  
 Create a /etc/apt/sources.list.d/mongodb.list file using the following command.
     echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+    
 Now issue the following command to update the repository −
     sudo apt-get update
+    
 Next install the MongoDB by using the following command −
     apt-get install mongodb-10gen = 2.2.3
+    
 Start MongoDB
     sudo service mongodb start
+    
 Stop MongoDB
     sudo service mongodb stop
+    
 Restart MongoDB
     sudo service mongodb restart
   
