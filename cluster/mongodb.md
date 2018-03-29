@@ -107,8 +107,8 @@ If using MySQL, the basic information of the mobile phone is a separate table, a
     );
 
     INSERT INTO `mobiles` (`id`, `name`, `brand`) VALUES
-    (1, 'ME525', '摩托罗拉'),
-    (2, 'E7'   , '诺基亚');
+    (1, 'iPhoneX', 'Apple'),
+    (2, 'E7'   , 'Nokia');
 
     
     INSERT INTO `mobile_params` (`id`, `mobile_id`, `name`, `value`) VALUES
