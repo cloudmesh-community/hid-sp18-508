@@ -23,21 +23,21 @@ MongoDB is an open-source document database and NoSQL database, which is written
 
 ### Advantages of MongoDB over RDBMS 
 
-Schema less − MongoDB is a document database in which one collection holds different documents. Number of fields, content and size of the document can differ from one document to another.
+- Schema less − MongoDB is a document database in which one collection holds different documents. Number of fields, content and size of the document can differ from one document to another.
 
-Structure of a single object is clear.
+- Structure of a single object is clear.
 
-No complex joins.
+- No complex joins.
 
-Deep query-ability. MongoDB supports dynamic queries on documents using a document-based query language that's nearly as powerful as SQL.
+- Deep query-ability. MongoDB supports dynamic queries on documents using a document-based query language that's nearly as powerful as SQL.
 
-Tuning.
+- Tuning.
 
-Ease of scale-out − MongoDB is easy to scale.
+- Ease of scale-out − MongoDB is easy to scale.
 
-Conversion/mapping of application objects to database objects not needed.
+- Conversion/mapping of application objects to database objects not needed.
 
-Uses internal memory for storing the (windowed) working set, enabling faster access of data.
+- Uses internal memory for storing the (windowed) working set, enabling faster access of data.
 
 ### Install MongoDB on Ubuntu
 
