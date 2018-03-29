@@ -77,7 +77,7 @@ Restart MongoDB
   
 ### MongoDB Suitable Occasions
 The main goal of mongodb is to build a bridge between key/value storage (providing high performance and high scalability) and traditional RDBMS systems (rich functions), combining the advantages of both. Mongo applies to the following scenarios:
-1. Website data: Mongo is very suitable for real-time insert, update and query, and has the replication and high scalability required for real-time data storage on the website.
+1.  Website data: Mongo is very suitable for real-time insert, update and query, and has the replication and high scalability     required for real-time data storage on the website.
 2. Cache: Because of its high performance, mongo is also suitable as a caching layer for information infrastructure. After the system restarts, the persistent cache built by mongo can avoid overloading the underlying data source.
 3. Large-size, low-value data: Using traditional relational databases to store some data may be expensive. Before that, many programmers would choose traditional files for storage.
 4. Highly scalable scenario: mongo is very suitable for a database consisting of tens or hundreds of servers.
