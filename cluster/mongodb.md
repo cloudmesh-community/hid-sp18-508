@@ -106,6 +106,8 @@ If using MySQL, the basic information of the mobile phone is a separate table, a
         PRIMARY KEY (`id`)
     );
     
+    
+    
     INSERT INTO `mobiles` (`id`, `name`, `brand`) VALUES
     (1, 'iPhoneX', 'Apple'),
     (2, 'E7'   , 'Nokia');
