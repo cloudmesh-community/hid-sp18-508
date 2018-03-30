@@ -2,11 +2,11 @@
 ## MongoDB Tutorial
 
 
-Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
+Some steps are retrieved from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
 
 If you already learned about Mysql, you can jump to the last section "Comparison of MySQL and MongoDB Design Examples" to get some simple ideas about MongoDB.
 
-The example in Section ~\ref{s:comparison} is copied from <https://huoding.com/2011/06/08/84> 
+The example in Section ~\ref{s:comparison} is retrieved from <https://huoding.com/2011/06/08/84> 
 
 
 ### Overview
@@ -80,6 +80,7 @@ Restart MongoDB
 ### Start Using MongoDB
 
 Following commands are retrieved from <https://docs.mongodb.com/manual/tutorial/getting-started/>
+
 First, db.collection.insertMany() can insert multiple documents into a collection. Pass an array of documents to the method.
   
     db.inventory.insertMany([
@@ -142,6 +143,7 @@ That was so easy to get all objects which status is "D".
     
 ### Types of Data
 The definition is retrieved from <https://docs.mongodb.com/manual/reference/bson-types/>
+
 "BSON is a binary serialization format used to store documents and make remote procedure calls in MongoDB. Each BSON type has both integer and string identifiers as listed in the following:"
 
 MinKey (internal type)
@@ -173,6 +175,7 @@ MaxKey (internal type)
 
 ### Working with Python -- PyMongo
 This section is retrieved from <https://api.mongodb.com/python/current/>
+
 "PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python."
 We recommend using pip to install pymongo on all platforms:
 
