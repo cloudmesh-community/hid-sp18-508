@@ -14,6 +14,7 @@ The example in Section ~\ref{s:comparison} is copied from <https://huoding.com/2
 The definition is retrieved from <https://docs.mongodb.com/manual/introduction/>
 
 "MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.  MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents."
+
 Generally, there are four kinds of database, key-value stores, big table clones, document database abd graph databases. And MongoDB is one of the Document Database. In key-value stores database, we have to use key to do read and wrtie. Although mongodb has a set of key-value pairs in its document, we do not know keys to read and get data.  The following table shows the diffience between MongoDB and regular RDMBS(Relational database management system).
 
 ### MongoDB Conceptual Analysis
