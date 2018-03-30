@@ -6,11 +6,13 @@
 Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
 
 If you already learned about Mysql, you can jump to the last section "Comparison of MySQL and MongoDB Design Examples" to get some simple idea about MongoDB.
+
 The example in Section ~\ref{s:comparison} is copied from <https://huoding.com/2011/06/08/84> 
 
 
 ### Overview
 The definition is retrieved from <https://docs.mongodb.com/manual/introduction/>
+
 "MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.  MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents."
 Generally, there are four kinds of database, key-value stores, big table clones, document database abd graph databases. And MongoDB is one of the Document Database. In key-value stores database, we have to use key to do read and wrtie. Although mongodb has a set of key-value pairs in its document, we do not know keys to read and get data.  The following table shows the diffience between MongoDB and regular RDMBS(Relational database management system).
 
@@ -144,19 +146,33 @@ That was so easy to get all objects which status is "D".
 ### Types of Data
 The definition is retrieved from <https://docs.mongodb.com/manual/reference/bson-types/>
 "BSON is a binary serialization format used to store documents and make remote procedure calls in MongoDB. Each BSON type has both integer and string identifiers as listed in the following:"
+
 MinKey (internal type)
+
 Null
+
 Numbers (ints, longs, doubles, decimals)
+
 Symbol, String
+
 Object
+
 Array
+
 BinData
+
 ObjectId
+
 Boolean
+
 Date
+
 Timestamp
+
 Regular Expression
+
 MaxKey (internal type)
+
 
 ### Working with Python -- PyMongo
 This section is retrieved from <https://api.mongodb.com/python/current/>
@@ -185,8 +201,32 @@ A single instance of MongoDB can support multiple independent databases. When wo
     
 Now we can easily connect to MongoDB from Python, read, write, update and any aggregation function are all easy to finish in PyMongo. For more details, please see PyMongo's API <https://api.mongodb.com/python/current/>.
 
-### MongoEngine
 
+### Working with Python -- MongoEngine
+MongoEngine is based on PyMongo.
+
+install MongoEngine
+
+        pip install mongoengine
+
+However unlike PyMongo, beforing using that, we need define a document pattern first.
+
+    class Adult(DynamicDocument):
+         meta = {
+            'collection': 'student',
+            'strict': False
+        }
+        id = IntField()
+        age = IntField()
+        education = StringField()
+        race = StringField()
+        sex = StringField()
+        salary = StringField()
+        
+Then, we can easily insert, update, remove or find data. The most difference between PyMongo and MongoEngine is that MongoEngine is Object-Oriented, it needs document pattern, and it directly inherited from the DynamicDocument class. While Pymongo is non-object-oriented. 
+For more details, please see MongoEngine's API <http://docs.mongoengine.org/apireference.html>.
+
+    
 
 ### Comparison of MySQL and MongoDB Design Examples
 
