@@ -1,7 +1,6 @@
 
 ## MongoDB Tutorial
 
-**THIS IS A DRAFT AND NOT COMPLETED YET**
 
 Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
 
