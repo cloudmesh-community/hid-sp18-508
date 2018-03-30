@@ -1,9 +1,3 @@
-* item
-
-  ```
-  mongo
-  ```
-* item
 
 ## MongoDB Tutorial
 
@@ -11,8 +5,14 @@
 
 Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
 
-
+If you already learned about Mysql, you can jump to the last section "Comparison of MySQL and MongoDB Design Examples" to get some simple idea about MongoDB.
 The example in Section ~\ref{s:comparison} is copied from <https://huoding.com/2011/06/08/84> 
+
+
+### Overview
+The definition is retrieved from <https://docs.mongodb.com/manual/introduction/>
+"MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.  MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents."
+Generally, there are four kinds of database, key-value stores, big table clones, document database abd graph databases. And MongoDB is one of the Document Database. In key-value stores database, we have to use key to do read and wrtie. Although mongodb has a set of key-value pairs in its document, we do not know keys to read and get data.  The following table shows the diffience between MongoDB and regular RDMBS(Relational database management system).
 
 ### MongoDB Conceptual Analysis
 
@@ -29,10 +29,6 @@ DataBase
 A mongodb can create multiple database. The default database in MongoDB is "db", which is stored in the data directory. A single instance of MongoDB can accommodate multiple independent databases, each with its own set and permissions, and different databases are also placed in different files.
 "show dbs" can show all database list.
 
-    
-MongoDB is an open-source document database and NoSQL database, which is written in C++. A document is a set of key-value pairs. The table shows the difference between RDBMS terminology and MongoDB.
- 
- 
 
 ### Advantages of MongoDB over RDBMS 
 
@@ -83,10 +79,119 @@ Restart MongoDB
 
     sudo service mongodb restart
 
+### Start Using MongoDB
+Following commands are retrieved from <https://docs.mongodb.com/manual/tutorial/getting-started/>
+First, db.collection.insertMany() can insert multiple documents into a collection. Pass an array of documents to the method.
+  
+    db.inventory.insertMany([
+    // MongoDB adds the _id field with an ObjectId if _id is not present
+    { item: "journal", qty: 25, status: "A",
+        size: { h: 14, w: 21, uom: "cm" }, tags: [ "blank", "red" ] },
+    { item: "notebook", qty: 50, status: "A",
+        size: { h: 8.5, w: 11, uom: "in" }, tags: [ "red", "blank" ] },
+    { item: "paper", qty: 100, status: "D",
+        size: { h: 8.5, w: 11, uom: "in" }, tags: [ "red", "blank", "plain" ] },
+    { item: "planner", qty: 75, status: "D",
+        size: { h: 22.85, w: 30, uom: "cm" }, tags: [ "blank", "red" ] },
+    { item: "postcard", qty: 45, status: "A",
+        size: { h: 10, w: 15.25, uom: "cm" }, tags: [ "blue" ] }
+    ]);
+
+In the terminal, we will get 
+
+    {
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5abe85cda3f0937642940210"),
+                ObjectId("5abe85cda3f0937642940211"),
+                ObjectId("5abe85cda3f0937642940212"),
+                ObjectId("5abe85cda3f0937642940213"),
+                ObjectId("5abe85cda3f0937642940214")
+        ]
+    }
+
+Then, to select all documents in the collection, pass an empty document as the query filter document to the db.collection.find() method:
+
+In the terminal, we will get
+
+    db.inventory.find( {} )
+    { "_id" : ObjectId("5abe85cda3f0937642940210"), "item" : "journal", "qty" : 25, "status" : "A", "size" : { "h" : 14
+    , "w" : 21, "uom" : "cm" }, "tags" : [ "blank", "red" ] }
+    { "_id" : ObjectId("5abe85cda3f0937642940211"), "item" : "notebook", "qty" : 50, "status" : "A", "size" : { "h" : 8
+    .5, "w" : 11, "uom" : "in" }, "tags" : [ "red", "blank" ] }
+    { "_id" : ObjectId("5abe85cda3f0937642940212"), "item" : "paper", "qty" : 100, "status" : "D", "size" : { "h" : 8.5
+    , "w" : 11, "uom" : "in" }, "tags" : [ "red", "blank", "plain" ] }
+    { "_id" : ObjectId("5abe85cda3f0937642940213"), "item" : "planner", "qty" : 75, "status" : "D", "size" : { "h" : 22
+    .85, "w" : 30, "uom" : "cm" }, "tags" : [ "blank", "red" ] }
+    { "_id" : ObjectId("5abe85cda3f0937642940214"), "item" : "postcard", "qty" : 45, "status" : "A", "size" : { "h" : 1
+    0, "w" : 15.25, "uom" : "cm" }, "tags" : [ "blue" ] }
+We can see that although we do not define keys for our documents, they have their own ObjectId when they are inserted into MongoDB. And we can eaily insert them and get them all. And we can also easily get data without knowing anything about objectID.
+
+To query for documents that match specific equality conditions, pass the find() method a query filter document with the <field>: <value> of the desired documents. The following example selects from the inventory collection all documents where the status equals "D":
+ 
+    db.inventory.find( { status: "D" } )
+    
+In the terminal, we will get:
+
+    { "_id" : ObjectId("5abe85cda3f0937642940212"), "item" : "paper", "qty" : 100, "status" : "D", "size" : { "h" : 8.5
+    , "w" : 11, "uom" : "in" }, "tags" : [ "red", "blank", "plain" ] }
+    { "_id" : ObjectId("5abe85cda3f0937642940213"), "item" : "planner", "qty" : 75, "status" : "D", "size" : { "h" : 22
+    .85, "w" : 30, "uom" : "cm" }, "tags" : [ "blank", "red" ] }
+
+That was so easy to get all objects which status is "D".
+
+    
+### Types of Data
+The definition is retrieved from <https://docs.mongodb.com/manual/reference/bson-types/>
+"BSON is a binary serialization format used to store documents and make remote procedure calls in MongoDB. Each BSON type has both integer and string identifiers as listed in the following:"
+MinKey (internal type)
+Null
+Numbers (ints, longs, doubles, decimals)
+Symbol, String
+Object
+Array
+BinData
+ObjectId
+Boolean
+Date
+Timestamp
+Regular Expression
+MaxKey (internal type)
+
+### Working with Python -- PyMongo
+This section is retrieved from <https://api.mongodb.com/python/current/>
+"PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python."
+We recommend using pip to install pymongo on all platforms:
+
+    python -m pip install pymongo
+  
+To upgrade using pip:
+
+    python -m pip install --upgrade pymongo
+
+The first step when working with PyMongo is to create a MongoClient to the running mongod instance. Doing so is easy:
+
+    from pymongo import MongoClient
+    client = MongoClient()
+    
+The above code will connect on the default host and port. We can also specify the host and port explicitly, as follows:
+
+    client = MongoClient('localhost', 27017)
+    
+A single instance of MongoDB can support multiple independent databases. When working with PyMongo you access databases using attribute style access on MongoClient instances:
+
+    db = client.test_database
+    collection = db.test_collection
+    
+Now we can easily connect to MongoDB from Python, read, write, update and any aggregation function are all easy to finish in PyMongo. For more details, please see PyMongo's API <https://api.mongodb.com/python/current/>.
+
+### MongoEngine
+
+
 ### Comparison of MySQL and MongoDB Design Examples
 
 \label{s:comparison}
-This section is copied from <https://huoding.com/2011/06/08/84> 
+This section is retrieved from <https://huoding.com/2011/06/08/84> 
 
 If using MySQL, the basic information of the mobile phone is a separate table, and because the parameter information of different mobile phones is very different, it also needs a parameter table to be saved separately.
 
