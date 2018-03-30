@@ -1,7 +1,10 @@
+* item
 
 ```
-    mongo
+mongo
 ```
+* item
+
 ## MongoDB Tutorial
 
 **THIS IS A DRAFT AND NOT COMPLETED YET**
