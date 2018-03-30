@@ -4,6 +4,8 @@
 **THIS IS A DRAFT AND NOT COMPLETED YET**
 
 Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
+
+
 Examples are copied from <https://huoding.com/2011/06/08/84>
 
 ### MongoDB Conceptual Analysis
