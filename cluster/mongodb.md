@@ -6,7 +6,7 @@
 Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
 
 
-Examples are copied from <https://huoding.com/2011/06/08/84>
+The example in Section ~\ref{s:comparison} is copied from <https://huoding.com/2011/06/08/84> 
 
 ### MongoDB Conceptual Analysis
 
@@ -78,6 +78,10 @@ Restart MongoDB
     sudo service mongodb restart
 
 ### Comparison of MySQL and MongoDB Design Examples
+
+\label{s:comparison}
+This section is copied from <https://huoding.com/2011/06/08/84> 
+
 If using MySQL, the basic information of the mobile phone is a separate table, and because the parameter information of different mobile phones is very different, it also needs a parameter table to be saved separately.
 
     CREATE TABLE IF NOT EXISTS `mobiles` (
