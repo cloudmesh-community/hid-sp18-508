@@ -4,7 +4,7 @@
 
 Some steps are copied from <https://www.tutorialspoint.com/mongodb/mongodb_environment.htm/>
 
-If you already learned about Mysql, you can jump to the last section "Comparison of MySQL and MongoDB Design Examples" to get some simple idea about MongoDB.
+If you already learned about Mysql, you can jump to the last section "Comparison of MySQL and MongoDB Design Examples" to get some simple ideas about MongoDB.
 
 The example in Section ~\ref{s:comparison} is copied from <https://huoding.com/2011/06/08/84> 
 
@@ -14,7 +14,7 @@ The definition is retrieved from <https://docs.mongodb.com/manual/introduction/>
 
 "MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.  MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents."
 
-Generally, there are four kinds of database, key-value stores, big table clones, document database abd graph databases. And MongoDB is one of the Document Database. In key-value stores database, we have to use key to do read and wrtie. Although mongodb has a set of key-value pairs in its document, we do not know keys to read and get data.  The following table shows the diffience between MongoDB and regular RDMBS(Relational database management system).
+Generally, there are four kinds of database, key-value stores, big table clones, document database abd graph databases. And MongoDB is one of the Document Database. In key-value stores database, we have to use key to do read and wrtie. Although mongodb has a set of key-value pairs in its document, we do not need know keys to read and get data. The following table shows the diffience between MongoDB and regular RDMBS(Relational database management system).
 
 ### MongoDB Conceptual Analysis
 
@@ -26,10 +26,6 @@ Generally, there are four kinds of database, key-value stores, big table clones,
 | column     | Field              |
 | Table Join | Embedded Documents |
 | Primary Key| Primary Key        | 
-
-DataBase
-A mongodb can create multiple database. The default database in MongoDB is "db", which is stored in the data directory. A single instance of MongoDB can accommodate multiple independent databases, each with its own set and permissions, and different databases are also placed in different files.
-"show dbs" can show all database list.
 
 
 ### Advantages of MongoDB over RDBMS 
@@ -82,6 +78,7 @@ Restart MongoDB
     sudo service mongodb restart
 
 ### Start Using MongoDB
+
 Following commands are retrieved from <https://docs.mongodb.com/manual/tutorial/getting-started/>
 First, db.collection.insertMany() can insert multiple documents into a collection. Pass an array of documents to the method.
   
@@ -224,6 +221,7 @@ However unlike PyMongo, beforing using that, we need define a document pattern f
         salary = StringField()
         
 Then, we can easily insert, update, remove or find data. The most difference between PyMongo and MongoEngine is that MongoEngine is Object-Oriented, it needs document pattern, and it directly inherited from the DynamicDocument class. While Pymongo is non-object-oriented. 
+
 For more details, please see MongoEngine's API <http://docs.mongoengine.org/apireference.html>.
 
     
