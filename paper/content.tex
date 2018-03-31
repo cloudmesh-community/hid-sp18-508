@@ -87,9 +87,12 @@ The above figure~\ref{f:hadoop} shows in the Hadoop system, there will be a Mast
 The most suitable is the analysis of massive data. In fact, Google first proposed MapReduce for mass data analysis. At the same time, HDFS was originally developed for search engine implementation and was later used in distributed computing frameworks. Mass data is divided into multiple nodes and then calculated by each node in parallel, and the results obtained are merged into the output. At the same time, the output of the first stage can be used as the input for the next stage of calculation. Therefore, it can be imagined that a tree-structured distributed computing map has different outputs at different stages. Simultaneous parallel and serial calculations can also be very well handled efficiently in distributed cluster resources.
 
 \section{Features}
-Extensiblity: Both storage scalability and computing scalability are the most important part of Hadoop's design.
-Economy: The framework can run on any ordinary PC.
-Reliablity: The backup and recovery mechanism of distributed file systems and the task monitoring of MapReduce ensure the reliability of distributed processing.
+Extensiblity: Hadoop's distributed storage and distributed computing is done on cluster nodes, which also determines Hadoop can scale to more cluster nodes.
+
+Economy: ``Hadoop generates cost benefits by bringing massively parallel computing to commodity servers, resulting in a substantial reduction in the cost per terabyte of storage, which in turn makes it reasonable to model all your data"~\cite{hid-sp18-508-features}
+
+Reliablity: Through the distributed storage, Hadoop can automatically store multiple copies. When the data processing request fails, it will automatically redeploy the calculation task.
+
 Efficience: The efficient data exchange implementation of the distributed file system and the combination of MapReduce and Local Data processing make basic preparations for efficient processing of large amounts of information.
 
 
@@ -109,6 +112,9 @@ Fully Distributed Mode : This mode is fully distributed with minimum two or more
 Yahoo is the biggest proponent of Hadoop. Since Hadoop is created more than 10 years ago, it has already become Yahoo's most important technology. At first, Hadoop is just used as Web searching, but with the times going, Yahoo's Hadoop application includes more aspects, which includes: advertising system, user behavior analysis, anti-spam system, personalized recommendation. Today, there are nearly 300 unique Hadoop platform application scenarios in different areas ~\cite{hid-sp18-508-yahoo}.
 
 ``Facebook runs the world?s largest Hadoop cluster" says Jay Parikh, Vice President Infrastructure Engineering, Facebook.As a world-renowned social networking site, has more than 300 million active users, of which approximately 30 million users update their status at least once a day; users upload more than 1 billion photos and 10 million videos per month; and Weeks share 1 billion items, including logs, links, news, Weibo, etc. Therefore, the amount of data that Facebook needs to store and process is enormous. The cloud platform for performance is very important to Facebook, and Facebook mainly uses the Hadoop platform for ``searching, log processing, recommendation system, data warehousing and video and image analysis. Basically, Facebook runs the biggest Hadoop cluster that goes beyond 4,000 machines and storing more than hundreds of millions of gigabytes"~\cite{hid-sp18-508-fb}. Its first user-facing application, Facebook Messenger is also based on Hadoop database.
+
+The world's largest supermarket chain, Wal-Mart, uses Hadoop to analyze the behavior of customers searching for products, and users search for keywords on the Wal-Mart website through search engines. Using the analysis results of these keywords to explore customer needs, in order to plan the next quarter's product promotion strategy. It even intends to analyze customers' discussion of products on social networking sites such as Facebook and Twitter, hoping to find customers? needs one step ahead of the competition.
+
 
 
 
