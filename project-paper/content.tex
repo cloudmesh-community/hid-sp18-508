@@ -14,7 +14,8 @@
 \email{yueguo@iu.edu}
 
 \begin{abstract}
-This project paper shows the proposal that needed in project, which provides the goal, the design, the scenarios and the expectations.
+This project paper shows the proposal that needed in project, which 
+provides the goal, the design, the scenarios and the expectations.
 \end{abstract}
 
 \keywords{Cassandra, MongoDB}
@@ -24,15 +25,24 @@ This project paper shows the proposal that needed in project, which provides the
 
 
 \section{Introduction}
-Cassandra and MongoDB are both not Relational DataBase Management System. There are four kinds of database, including Key-Value Stores, Big Tablle Clones, Document Database and Graph Database. Cassandra is a kind of Big Table Clones, while MongoDB is a kind of Document Database. Cassandra more focuses on Availability while MongoDB focuses more on Consistency. So there should be some difference in their performance when dealing with same data and same operations on the same platform. After deploying both on the same platform and testing same data on them, their performance can be compared.
+Cassandra and MongoDB are both not Relational DataBase Management System. 
+There are four kinds of database, including Key-Value Stores, Big Tablle 
+Clones, Document Database and Graph Database. Cassandra is a kind of Big 
+Table Clones, while MongoDB is a kind of Document Database. Cassandra more 
+focuses on Availability while MongoDB focuses more on Consistency. So there
+ should be some difference in their performance when dealing with same data 
+ and same operations on the same platform. After deploying both on the same 
+ platform and testing same data on them, their performance can be compared.
 
 
 \section{Design}
-Choose MongoDb as backend first, then use Cassandra as backend. Use the adult data from UCI Machine Learning Repository to test. The performance metrics include: 
+Choose MongoDb as backend first, then use Cassandra as backend. Use the adult
+ data from UCI Machine Learning Repository to test. The performance metrics include: 
 
 1. How fast can it process when using different backends
 
-2. Endurance testing. Running search operation continuously to confirm its sustainability.
+2. Endurance testing. Running search operation continuously to confirm its 
+sustainability.
 
 \section{Scenarios}
 
@@ -69,15 +79,18 @@ Using server connected to Cassandra:
 \section{Results}
 What parameter:
 
-use time [options] COMMAND [arguments], which can shows four kind of information: Time resources, Memory resources, IO resources and Command info.
+use time [options] COMMAND [arguments], which can shows four kind of information:
+ Time resources, Memory resources, IO resources and Command info.
 
 How to process:
 
-Redirect the output of time command into the specified file. And then write a program to analyze those outputs and do some statistics on those results. 
+Redirect the output of time command into the specified file. And then write a 
+program to analyze those outputs and do some statistics on those results. 
 
 
 \section{Conclusion}
-Compare the performance of MongoDB and Cassandra, especially the consistency and availability.
+Compare the performance of MongoDB and Cassandra, especially the consistency 
+and availability.
 
 \begin{acks}
 
