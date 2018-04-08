@@ -19,18 +19,18 @@
 This paper introduces what is Hadoop, how to use Hadoop and why using Hadoop.
 \end{abstract}
 
-\keywords{Hadoop, MapReduce, HDFS, hid-sp18-508 }
+\keywords{Hadoop, MapReduce, HDFS, hid-sp18-508}
 
 \maketitle
 
 \section{Organization}
 The document is first to introduce Hadoop from three levels, its two main parts: 
-MapReduce and HDFS, and Hadoop itself. Second, to show the application and 
+MapReduce and HDFS, and Hadoop itself. Second, to show the applications and 
  features of Hadoop, which can tell the advantage of Hadoop. Finally 
- to introduce the use cases of Hadoop and the environment setup.
+ to introduce the environment setup and the use cases of Hadoop.
 
 \section{Introduction}
-Nowadays, there are huge amounts of data in the world. And there are also lots of
+Nowadays, there are huge amounts of data in the world and there are also lots of
  different models to analyze those data. No matter how good the models are, big 
  data can always bring better result. However, there are also some problems with
   storing big data and analyzing them. Disk capacity grows much faster than the 
@@ -43,19 +43,19 @@ Nowadays, there are huge amounts of data in the world. And there are also lots o
 
 \section{MapReduce}
 MapReduce can be split to two verbs Map and Reduce. Map is to break down a task 
-into multiple tasks, Reduce is to sum the results of multiple tasks and come up 
+into multiple tasks, and Reduce is to sum the results of multiple tasks and come up 
 with the final result. 
 
 ``MapReduce program executes in three stages, namely map stage, shuffle stage, 
 and reduce stage.
 
-Map stage: The map or mapper?s job is to process the input data. Generally, the 
+Map stage: The map or mapper's job is to process the input data. Generally, the 
 input data is in the form of file or directory and is stored in the Hadoop file 
 system (HDFS). The input file is passed to the mapper function line by line. The 
 mapper processes the data and creates several small chunks of data.
 
 Reduce stage: This stage is the combination of the Shuffle stage and the Reduce 
-stage. The Reducer?s job is to process the data that comes from the mapper. After 
+stage. The Reducer's job is to process the data that comes from the mapper. After 
 processing, it produces a new set of output, which will be stored in the HDFS''~\cite{hid-sp18-508-mapreduce}.
 A architecture of Hadoop shown in Figure~\ref{f:fly}.
 
@@ -101,7 +101,7 @@ The advantage of HDFS:
 3. Access stream data: Write once and Read multiple times.
 4. Cheap: the filesystem relies on commodity storage disks that are much cheaper 
 than those used for enterprise-grade storage. Besides, HDFS is open source and does 
-not need pay for licensing fee.~\cite{hid-sp18-508-hdfs}.
+not need pay for licensing fee~\cite{hid-sp18-508-hdfs}.
 
 The disadvantage of HDFS:
  Does not support multi-user writes: HDFS is immutable, which means files cannot 
@@ -139,7 +139,7 @@ cluster nodes, which also determines Hadoop can scale to more cluster nodes.
 
 Economy: ``Hadoop generates cost benefits by bringing massively parallel computing 
 to commodity servers, resulting in a substantial reduction in the cost per terabyte 
-of storage, which in turn makes it reasonable to model all your data"~\cite{hid-sp18-508-features}
+of storage, which in turn makes it reasonable to model all your data"~\cite{hid-sp18-508-features}.
 
 Reliability: Through the distributed storage, Hadoop can automatically store multiple 
 copies. When the data processing request fails, it will automatically redeploy the 
@@ -163,16 +163,16 @@ from Apache software foundation.
 Once you have downloaded Hadoop, Hadoop cluster can be operated in one of the 
 three supported modes:
 
-Local/Standalone Mode : After downloading Hadoop in your system, by default, 
+Local/Standalone Mode: After downloading Hadoop in your system, by default, 
 it is configured in a standalone mode and can be run as a single java process.
 
-Pseudo Distributed Mode : It is a distributed simulation on single machine. 
+Pseudo Distributed Mode: It is a distributed simulation on single machine. 
 Each Hadoop daemon such as hdfs, yarn, MapReduce etc., will run as a separate 
 java process. This mode is useful for development.
 
-Fully Distributed Mode : This mode is fully distributed with minimum two or more 
+Fully Distributed Mode: This mode is fully distributed with minimum two or more 
 machines as a cluster. We will come across this mode in detail in the coming 
-chapters'''~\cite{hid-sp18-508-hadoop}. 
+chapters''~\cite{hid-sp18-508-hadoop}. 
 
 
 \section{Usecase}
