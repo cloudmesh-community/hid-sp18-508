@@ -21,8 +21,8 @@ def profiles_get():  # noqa: E501
 
     :rtype: List[PROFILE]
     """
-    listofProfile = []
+    listOfProfile = []
     items = get_profile()
     for each in items:
-        listofProfile.append(PROFILE(item[0],item[1],item[2],item[3],item[4],item[5],item[6],item[7]))
+        listOfProfile.append(PROFILE(item[0],item[1],item[2],item[3],item[4],item[5],item[6],item[7]))
     return listOfProfile
