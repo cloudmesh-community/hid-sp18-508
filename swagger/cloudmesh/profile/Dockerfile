@@ -32,9 +32,9 @@ RUN pyenv install 3.6.2
 RUN pyenv global 3.6.2
 RUN python -m ensurepip
 
-RUN git clone https://github.com/cloudmesh-community/hid-sp18-405.git
+RUN git clone https://github.com/cloudmesh-community/hid-sp18-508.git
 
-WORKDIR /hid-sp18-405/swagger/cloudmesh/nlp
+WORKDIR /hid-sp18-508/swagger/cloudmesh/profile
 
 RUN wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
 
