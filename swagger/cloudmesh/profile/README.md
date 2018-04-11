@@ -1,7 +1,7 @@
 # Reproducible Cloud and Big Data Rest Service with Swagger 
 
 ## Acknowlegement: 
-I cloned the repo owned by Pathan, Shagufta (hid-sp18-516) and learnt about the make 
+I cloned the repo owned by Chen Min (hid-sp18-405) and learnt about the make 
 file before I modified and created my own make file for this assignment
 
 ## Notes For Instructors 
@@ -25,41 +25,16 @@ This is the directory for reproducable Reset Service with Swagger.
 
 * The yaml file I used is in 
 
-        hid-sp18-405/swagger/cloudmesh/nlp/nlp.yaml
+        hid-sp18-508/swagger/cloudmesh/profile/profile.yaml
     
 * The default_controller is at 
 
-        hid-sp18-405/swagger/cloudmesh/nlpr/default_controller.py
+        hid-sp18-508/swagger/cloudmesh/profile/default_controller.py
     
-* The nlp related modules (which are used in the default_controller.py) are called from 
+* And profile_controller is at
 
-		hid-sp18-405/swagger/cloudmesh/nlp/nlps/
+        hid-sp18-508/swagger/cloudmesh/profile/profile_controller.py
 
-* To install these modules alone, please cd to the above directory and run:
-		
-		pip install -r requirements.txt
- 		python setup.py install
-
-
-## Service Descprition
-
-I was trying to build a service with Natural Language Processing
-capabilities which takes English sentences as input and returns
-various linguistic features. This may lead towards the final project
-in this course.
-
-In the current implementation, I allow the request to specify
-sentences in the uri and the response will include the following
-features:
-
-* tokens
-* part of speech taggings
-* dependency parsing results
-* named entity recognition
-    
-These features are derived mainly using spacy. Later in the semester,
-I may consider using Stanford CoreNLP, NLTk etc to get more nlp
-results depending on the final service that I want to deliver.
 
 ## Server Generation Using Swagger Codegen
 
@@ -72,7 +47,7 @@ chapter 34: REST Service Generation with Swagger
 * clone the repository
 * navigate to the directory 
 
-        cd /hid-sp18-405/swagger/cloudmesh/nlp
+        cd /hid-sp18-508/swagger/cloudmesh/profile
         
 * creates the swagger service from the yaml file with correct controllers
         
@@ -87,61 +62,6 @@ chapter 34: REST Service Generation with Swagger
         Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 
 
-## Testing and Requesting Using the Browser
-Now I will give examples of the services with the example sentence "Tim Cook is the CEO of Apple."
-* part of speech taggings
-
-	    http://localhost:8080/nlp/pos/Tim Cook is the CEO of Apple.
-	
-	Get following response:
-
-		{
-	  "tags": "('Tim', 'PROPN') , ('Cook', 'PROPN') , ('is', 'VERB') ,
-	  ('the', 'DET') , ('CEO', 'PROPN') , ('of', 'ADP') , ('Apple', 'PROPN') , ('.', 'PUNCT')",
-	  "tokens": "Tim , Cook , is , the , CEO , of , Apple , ."
-		}
-
-* dependency parsing results
-
-	    http://localhost:8080/nlp/depparse/Tim Cook is the CEO of Apple.
-	
-	Get following response:
-
-		{
-	    "parsetree": "('Tim', 'compound', 'Cook') , ('Cook', 'nsubj', 'is'), ('is', 'ROOT', 'is') ,
-	    ('the', 'det', 'CEO') , ('CEO', 'attr', 'is') , ('of', 'prep', 'CEO') , 
-	    ('Apple', 'pobj', 'of') , ('.', 'punct', 'is')",
-	    "tokens": "Tim , Cook , is , the , CEO , of , Apple , ."
-        }
-
-* named entity recognition
-
-		http://localhost:8080/nlp/entity/Tim Cook is the CEO of Apple.
-
-	Get following response:
-	
-		{
-	  "entities": "('Tim', 'PERSON') , ('Cook', 'PERSON') , ('is', '') , ('the', '') ,
-	   ('CEO', '') , ('of', '') , ('Apple', 'ORG') , ('.', '')",
-	  "tokens": "Tim , Cook , is , the , CEO , of , Apple , ."
-		}
-
-* all linguistic features enabled
- 
-		http://localhost:8080/nlp/all/Tim Cook is the CEO of Apple.
-	
-	Get following response:
-
-	    {
-	  "entities": "('Tim', 'PERSON') , ('Cook', 'PERSON') , ('is', '') , ('the', '') , 
-	  ('CEO', '') , ('of', '') , ('Apple', 'ORG') , ('.', '')",
-	  "parsetree": "('Tim', 'compound', 'Cook') , ('Cook', 'nsubj', 'is') , ('is', 'ROOT', 'is') ,
-	   ('the', 'det', 'CEO') , ('CEO', 'attr', 'is') , ('of', 'prep', 'CEO') , 
-	   ('Apple', 'pobj', 'of') , ('.', 'punct', 'is')",
-	  "tags": "('Tim', 'PROPN') , ('Cook', 'PROPN') , ('is', 'VERB') , ('the', 'DET') , 
-	  ('CEO', 'PROPN') , ('of', 'ADP') , ('Apple', 'PROPN') , ('.', 'PUNCT')",
-	  "tokens": "Tim , Cook , is , the , CEO , of , Apple , ."
-		}
 
 ## Stop The Service
 
