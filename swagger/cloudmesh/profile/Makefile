@@ -24,7 +24,7 @@ service: dest
 	python setup.py install 
 
 start:  
-	sudo pip install pymongo
+	pip install pymongo
 	cd $(DESTDIR) && python -m swagger_server
 
 test:
