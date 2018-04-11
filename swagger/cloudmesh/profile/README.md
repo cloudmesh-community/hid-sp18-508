@@ -63,6 +63,7 @@ chapter 34: REST Service Generation with Swagger
         
 ## Test The Service
 
+* get all profiles
         http://localhost:8080/cloudmesh/profile/profiles
     
 
