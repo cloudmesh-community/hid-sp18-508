@@ -1,9 +1,9 @@
 
 SWAGGERCODEGEN=java -jar swagger-codegen-cli-2.3.1.jar
-YAMLFILE=nlp_v2.yaml
-DESTDIR=server/nlp/flaskConnexion
+YAMLFILE=profile.yaml
+DESTDIR=server/profile/flaskConnexion
 CREATED=server
-NLPDIR=nlps
+NLPDIR=profiles
 
 all: service start 
 	@echo "DONE"
@@ -29,9 +29,7 @@ start:
 	cd $(DESTDIR) && python -m swagger_server
 
 test:
-	curl http://localhost:8080/cloudmesh/nlp/all/Tim%20Cook%20is%20the%20CEO%20of%20Apple.
-
-	curl http://localhost:8080/cloudmesh/nlp/pos/Tim%20Cook%20is%20the%20CEO%20of%20Apple.
+	curl http://localhost:8080/cloudmesh/profile
             
 stop:
 	ps | grep swagger | grep -v "grep"| awk '{print $$1}' | xargs kill -9
@@ -41,5 +39,5 @@ clean:
 	rm *.jar
 
 container:
-	docker build -t cloudmesh-nlp .
-	docker run -p 8080:8080 cloudmesh-nlp 
+	docker build -t cloudmesh-profile .
+	docker run -p 8080:8080 cloudmesh-profile 
