@@ -16,7 +16,7 @@ service: dest
 	-i $(YAMLFILE) \
 	-l python-flask \
 	-o $(DESTDIR) \
-	-D supportPython3=true
+	-D supportPython2=true
 
 	cp -r *.py $(DESTDIR)/swagger_server/controllers
 	
