@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Min Chen <mc43@iu.edu>
+MAINTAINER Yue Guo <yueguo@iu.edu>
 
 RUN apt-get update -q && apt-get install -qy \
     build-essential \
