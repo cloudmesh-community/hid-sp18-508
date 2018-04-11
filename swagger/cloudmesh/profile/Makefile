@@ -3,7 +3,6 @@ SWAGGERCODEGEN=java -jar swagger-codegen-cli-2.3.1.jar
 YAMLFILE=profile.yaml
 DESTDIR=server/profile/flaskConnexion
 CREATED=server
-NLPDIR=profiles
 
 all: service start 
 	@echo "DONE"
@@ -20,7 +19,6 @@ service: dest
 	-D supportPython3=true
 
 	cp -r *.py $(DESTDIR)/swagger_server/controllers
-	cd $(NLPDIR) && pip install -r requirements.txt && python setup.py install
 	
 	cd $(DESTDIR) && pip install -r requirements.txt && \
 	python setup.py install 
