@@ -60,8 +60,11 @@ chapter 34: REST Service Generation with Swagger
 * The following will show
 
         Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+        
+## Test The Service
 
-
+        http://localhost:8080/cloudmesh/profile/profiles
+    
 
 ## Stop The Service
 
