@@ -75,7 +75,7 @@ chapter 34: REST Service Generation with Swagger
 
 * get profile by uuid
 
-        http://localhost:8080/cloudmesh/profile/135
+        http://localhost:8080/cloudmesh/profile/profiles/135
 	
 	Get following response:
 	
