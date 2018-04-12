@@ -5,7 +5,7 @@ I cloned the repo owned by Chen Min (hid-sp18-405) and learnt about the make
 file before I modified and created my own make file for this assignment
 
 ## About Service
-Use pymongo as backend, A profile is a general description of a user, which includes
+Use pymongo as backend, profile is a general description of a user, which includes
 uuid, username, context, description, firstname, lastname,publickey and email.
 The service provide add a whole profile, get all profiles and get one profile by uuid.
 
