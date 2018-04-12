@@ -98,26 +98,25 @@ chapter 34: REST Service Generation with Swagger
 	Get following response:
 	
 		[
+  		{"context": "abc",
+    		"description": "aaa",
+    		"email": "gydbd@hotmail.com",
+   		"firstname": "yue",
+    		"lastname": "guo",
+    		"publickey": "puclin",
+    		"username": "name",
+    		"uuid": "13"
+  		},
   		{
-    			"context": "abc",
-    			"description": "aaa",
-    			"email": "gydbd@hotmail.com",
-   			"firstname": "yue",
-    			"lastname": "guo",
-    			"publickey": "puclin",
-    			"username": "name",
-    			"uuid": "13"
-  			},
-  			{
-    			"context": "goodone",
-    			"description": "goodperson",
-    			"email": "yueguo@iu.com",
-    			"firstname": "yue",
-    			"lastname": "guo",
-    			"publickey": "public",
-    			"username": "nameYue",
-    			"uuid": "135"
-  			}
+    		"context": "goodone",
+    		"description": "goodperson",
+    		"email": "yueguo@iu.com",
+    		"firstname": "yue",
+    		"lastname": "guo",
+    		"publickey": "public",
+    		"username": "nameYue",
+    		"uuid": "135"
+  		}
 		]
     
 
