@@ -4,6 +4,12 @@
 I cloned the repo owned by Chen Min (hid-sp18-405) and learnt about the make 
 file before I modified and created my own make file for this assignment
 
+## About Service
+Use pymongo as backend, A profile is a general description of a user, which includes
+uuid, username, context, description, firstname, lastname,publickey and email.
+The service provide add a whole profile, get all profiles and get one profile by uuid.
+
+
 ## Notes For Instructors 
 This is the directory for reproducable Reset Service with Swagger. 
 
@@ -30,10 +36,7 @@ This is the directory for reproducable Reset Service with Swagger.
 * The default_controller is at 
 
         hid-sp18-508/swagger/cloudmesh/profile/default_controller.py
-    
-* And profile_controller is at
-
-        hid-sp18-508/swagger/cloudmesh/profile/profile_controller.py
+  
 
 
 ## Server Generation Using Swagger Codegen
@@ -62,7 +65,14 @@ chapter 34: REST Service Generation with Swagger
         Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
         
 ## Test The Service
+* add one profile
 
+        http://localhost:8080/cloudmesh/profile/addprofiles/135/nameYue/goodone/goodperson/yue/guo/public/yueguo@iu.com
+
+* get profile by uuid
+
+        http://localhost:8080/cloudmesh/profile/135
+    
 * get all profiles
 
         http://localhost:8080/cloudmesh/profile/profiles
