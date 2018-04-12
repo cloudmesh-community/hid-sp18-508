@@ -38,10 +38,8 @@ WORKDIR /hid-sp18-508/swagger/cloudmesh/profile
 RUN wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
 
 EXPOSE 8080
-CMD ["docker", "pull", "mongo"]
-CMD ["docker", "run", "-itd", "-P", "--name", "mongo-server", "mongo", "bash"]
-CMD ["docker" "run" "-p" "127.0.0.1:27017:27017"]
-EXPOSE 27017
+CMD ["docker" "run" "--name" "my_mongo" "-d" "-p" "27017:27017" "mongo:3.5"]
+
 RUN make service
 
 CMD ["make", "start"]
