@@ -100,7 +100,7 @@ chapter 34: REST Service Generation with Swagger
 		[
   		{
 		"context": "abc",
-    		"description": "aaa",
+		"description": "aaa",
     		"email": "gydbd@hotmail.com",
 		"firstname": "yue",
     		"lastname": "guo",
