@@ -68,6 +68,10 @@ chapter 34: REST Service Generation with Swagger
 * add one profile
 
         http://localhost:8080/cloudmesh/profile/addprofiles/135/nameYue/goodone/goodperson/yue/guo/public/yueguo@iu.com
+        
+  get following response
+  
+        "add a new profile successfully"
 
 * get profile by uuid
 
