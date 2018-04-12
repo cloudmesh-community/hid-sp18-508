@@ -28,7 +28,11 @@ start:
 	cd $(DESTDIR) && python -m swagger_server
 
 test:
-	curl http://localhost:8080/cloudmesh/profile
+	curl http://localhost:8080/cloudmesh/profile/addprofiles/135/nameYue/goodone/goodperson/yue/guo/public/yueguo@iu.com
+	
+	curl http://localhost:8080/cloudmesh/profile/profiles/135
+	
+	curl http://localhost:8080/cloudmesh/profile/profiles
             
 stop:
 	ps | grep swagger | grep -v "grep"| awk '{print $$1}' | xargs kill -9
