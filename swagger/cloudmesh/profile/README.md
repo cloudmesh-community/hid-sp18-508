@@ -94,6 +94,31 @@ chapter 34: REST Service Generation with Swagger
 * get all profiles
 
         http://localhost:8080/cloudmesh/profile/profiles
+	
+	Get following response:
+	
+		[
+  		{
+    			"context": "abc",
+    			"description": "aaa",
+    			"email": "gydbd@hotmail.com",
+   			"firstname": "yue",
+    			"lastname": "guo",
+    			"publickey": "puclin",
+    			"username": "name",
+    			"uuid": "13"
+  			},
+  			{
+    			"context": "goodone",
+    			"description": "goodperson",
+    			"email": "yueguo@iu.com",
+    			"firstname": "yue",
+    			"lastname": "guo",
+    			"publickey": "public",
+    			"username": "nameYue",
+    			"uuid": "135"
+  			}
+		]
     
 
 ## Stop The Service
