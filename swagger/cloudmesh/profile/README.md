@@ -98,10 +98,11 @@ chapter 34: REST Service Generation with Swagger
 	Get following response:
 	
 		[
-  		{"context": "abc",
+  		{
+		"context": "abc",
     		"description": "aaa",
     		"email": "gydbd@hotmail.com",
-   		"firstname": "yue",
+		"firstname": "yue",
     		"lastname": "guo",
     		"publickey": "puclin",
     		"username": "name",
