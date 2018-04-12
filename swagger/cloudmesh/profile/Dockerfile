@@ -40,6 +40,6 @@ RUN wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/sw
 EXPOSE 8080
 
 RUN make service
-
+CMD ["docker", "run", "--rm", "--name", "my-mongo", "-it", "-p", "27017:27017", "mongo:3.2.7"]
 CMD ["make", "start"]
 
