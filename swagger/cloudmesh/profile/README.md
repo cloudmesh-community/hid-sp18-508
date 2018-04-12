@@ -76,6 +76,20 @@ chapter 34: REST Service Generation with Swagger
 * get profile by uuid
 
         http://localhost:8080/cloudmesh/profile/135
+	
+	Get following response:
+	
+		{ "context": "goodone",
+  		"description": "goodperson",
+  		"email": "yueguo@iu.com",
+  		"firstname": "yue",
+  		"lastname": "guo",
+  		"publickey": "public",
+  		"username": "nameYue",
+  		"uuid": "135"
+		}
+
+	
     
 * get all profiles
 
