@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 MAINTAINER Yue Guo <yueguo@iu.edu>
 
 RUN apt-get update -q && apt-get install -qy \
@@ -41,5 +41,5 @@ EXPOSE 8080
 
 RUN make service
 
-RUN make start
+CMD ["make", "start"]
 
