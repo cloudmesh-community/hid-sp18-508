@@ -38,7 +38,6 @@ WORKDIR /hid-sp18-508/swagger/cloudmesh/profile
 RUN wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar
 
 EXPOSE 8080
-EXPOSE 27017
 
 RUN make service
 
