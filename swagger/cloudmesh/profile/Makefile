@@ -43,6 +43,6 @@ clean:
 
 container:
 	docker build -t cloudmesh-profile .
-	docker run --name my_mongo -d -p 27017:27017 mongo:3.5 
+	
 	docker run -p 8080:8080 cloudmesh-profile 
 	
