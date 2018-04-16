@@ -54,11 +54,11 @@ Batch processing
     mongoimport --type csv --headerline --file train_0.csv
     
     we get following
-          2018-04-15T11:38:39.421-0400	connected to: localhost
-          2018-04-15T11:38:42.420-0400	[........................] test.train_0	4.19MB/1.04GB (0.4%)
-          ...
-          2018-04-15T11:50:30.695-0400	[########################] test.train_0	1.04GB/1.04GB (100.0%)
-          2018-04-15T11:50:30.696-0400	imported 76344626 documents
+        2018-04-15T11:38:39.421-0400	connected to: localhost
+        2018-04-15T11:38:42.420-0400	[........................] test.train_0	4.19MB/1.04GB (0.4%)
+        ...
+        2018-04-15T11:50:30.695-0400	[########################] test.train_0	1.04GB/1.04GB (100.0%)
+        2018-04-15T11:50:30.696-0400	imported 76344626 documents
 
 
 
