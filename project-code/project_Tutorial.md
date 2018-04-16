@@ -13,7 +13,7 @@ Import the public key used by the package management system
  
 Create a list file for MongoDB
 
-   echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+    echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
     
 Reload local package database
 
@@ -50,6 +50,16 @@ Batch processing
         2018-04-15T11:06:13.683-0400	[#################.......] test.songs_id	15.3MB/21.1MB (72.9%)
         2018-04-15T11:06:16.042-0400	[########################] test.songs_id	21.1MB/21.1MB (100.0%)
         2018-04-15T11:06:16.044-0400	imported 419781 documents
+
+    mongoimport --type csv --headerline --file train_0.csv
+    
+    we get following
+          2018-04-15T11:38:39.421-0400	connected to: localhost
+          2018-04-15T11:38:42.420-0400	[........................] test.train_0	4.19MB/1.04GB (0.4%)
+          ...
+          2018-04-15T11:50:30.695-0400	[########################] test.train_0	1.04GB/1.04GB (100.0%)
+          2018-04-15T11:50:30.696-0400	imported 76344626 documents
+
 
 
 
