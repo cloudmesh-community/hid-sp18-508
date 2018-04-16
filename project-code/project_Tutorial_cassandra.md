@@ -4,7 +4,7 @@
 
 Some steps are retrieved from <https://www.datastax.com/2012/01/working-with-apache-cassandra-on-mac-os-x/>
 
-### Install MongoDB Community on Mac OS
+### Install Apache Cassandra on Mac OS X
 
 Download Cassandra
 
