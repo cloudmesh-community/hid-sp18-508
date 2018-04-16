@@ -34,9 +34,6 @@ For this brief introduction, we’ll just create a basic keyspace to hold some e
     
 Let’s create a base table to hold train data:
 
-    cqlsh> create keyspace dev
-    ... 
-    ... with replication = {'class':'SimpleStrategy','replication_factor':1};
     cqlsh> use dev;
     cqlsh:dev> create table train(uid int primary key,mid int,rate int); 
     cqlsh:dev> insert into train(uid,mid,rate) values(1,2,3);
