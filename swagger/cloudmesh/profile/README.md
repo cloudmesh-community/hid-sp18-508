@@ -1,7 +1,7 @@
 # Reproducible Cloud and Big Data Rest Service with Swagger 
 
 ## Acknowlegement: 
-I cloned the repo owned by Chen Min (hid-sp18-405) and learnt about the make 
+I cloned the repo owned by Chen Min (hid-sp18-405) and learned about the make 
 file before I modified and created my own make file for this assignment
 
 ## About Service
