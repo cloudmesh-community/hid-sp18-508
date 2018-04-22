@@ -3,27 +3,45 @@ import time
 cluster = Cluster()
 session = cluster.connect()
 session.set_keyspace('dev')
-t = time.time()
-print(t)
+
 TimeTuple=time.localtime(time.time())
 fmt='%Y-%m-%d %a %H:%M:%S'
 test=time.strftime(fmt,TimeTuple)
 print('time now:',test)
-with open('test_0.txt', 'r') as f:
-    data = f.readlines()
+PER_INSERT = 10000
+TIMES  = 1000
+file = open('casandra_result.txt', 'a')
+for i in range(TIMES):
 
-    for line in data:
-        row = line.split()
-        session.execute(
-            """
-            INSERT INTO train (uid, mid, rate)
-            VALUES (%s, %s, %s)
-            """,
-            (row[0], row[1], row[2])
-        )
+    perLine = []
+    for j in range(PER_INSERT):
+        perLine.append(str(i)+str(j))
+    time_pre = time.time()
+    for uid in perLine:
+        session.execute("INSERT INTO test (uid) VALUES (%s)", [uid])  # right
+    time_after = time.time()
+    print("insert time {0}: {1}".format(i, time_after - time_pre))
+    insert_time = time_after - time_pre
 
-t = time.time()
-print(t)
+
+
+    perLine = []
+    for j in range(PER_INSERT):
+        perLine.append(str(i) + str(j))
+    time_pre = time.time()
+    for uid in perLine:
+        query = "SELECT * FROM test WHERE uid=%s"
+        future = session.execute(query, [uid])
+    time_after = time.time()
+    print("search time {0}: {1}".format(i, time_after - time_pre))
+    search_time = time_after - time_pre
+
+
+    file.write("{0} {1} {2} {3}\n".format((i + 1) * PER_INSERT, insert_time, 0, search_time))
+
+
+file.close()
+
 TimeTuple=time.localtime(time.time())
 fmt='%Y-%m-%d %a %H:%M:%S'
 test=time.strftime(fmt,TimeTuple)
