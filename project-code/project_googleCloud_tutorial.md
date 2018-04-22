@@ -15,6 +15,11 @@ Install python3 and the packages we need
 Install MongoDB and Cassandra 
 
 Please refer to MongoDB and Cassandra Tutorial
+
+MongoDB Tutorial:
 <https://github.com/cloudmesh-community/hid-sp18-508/blob/master/project-code/project_Tutorial_mongo.md>
+
+Cassandra Tutorial:
+<https://github.com/cloudmesh-community/hid-sp18-508/blob/master/project-code/project_Tutorial_cassandra.md>
 
     
