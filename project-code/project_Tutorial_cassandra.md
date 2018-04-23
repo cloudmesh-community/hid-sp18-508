@@ -35,9 +35,42 @@ For this brief introduction, we’ll just create a basic keyspace to hold some e
 Let’s create a base table to hold train data:
 
     cqlsh> use dev;
-    cqlsh:dev> create table train(uid int primary key,mid int,rate int); 
-    cqlsh:dev> insert into train(uid,mid,rate) values(1,2,3);
+    cqlsh:dev> create table test(uid varchar primary key); 
+    cqlsh:dev> insert into test(uid) values('1');
 
+### Install Apache Cassandra on Ubuntu 14.04
+Some steps are retrieved from <https://www.digitalocean.com/community/tutorials/how-to-install-cassandra-and-run-a-single-node-cluster-on-ubuntu-14-04>
+
+Installing Cassandra
+
+    echo "deb http://www.apache.org/dist/cassandra/debian 22x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+
+Add the public key using this pair of commands, which must be run one after the other
+    
+    gpg --keyserver pgp.mit.edu --recv-keys F758CE318D77295D
+    gpg --export --armor F758CE318D77295D | sudo apt-key add -
+    
+Update the package database once again:
+ 
+    sudo apt-get update
+
+Finally, install Cassandra:
+
+    sudo apt-get install cassandra
+    
+Starting Cassandra:
+        
+    sudo service cassandra status
+    
+ You will see:
+    
+    Cassandra is running
+    
+Connecting to the Cluster:
+
+    sudo nodetool status
+    
+    cqlsh
 
 ### Using Cassandra with Python
 
