@@ -1,3 +1,5 @@
+%give credit to "xidui is very lazy" from github.io (https://xidui.github.io/)
+%modify the funtion to help show the comparision between mongo and cassandra
 function plot_result(size)
     file1 = strcat('mongo_result_',num2str(size),'.txt');
     file2 = strcat('casandra_result_',num2str(size),'.txt');
