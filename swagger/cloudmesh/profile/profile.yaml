@@ -43,7 +43,7 @@ paths:
           description: "profile info"
           schema: 
             $ref: "#/definitions/PROFILE"
- /addprofiles/{uuid}/{username}/{context}/{description}/{firstname}/{lastname}/{publickey}:
+  /addprofiles/{uuid}/{username}/{context}/{description}/{firstname}/{lastname}/{publickey}:
     get: 
       description: "add a general description of a user "
       operationId: addProfileMongo
