@@ -46,3 +46,7 @@ def get_profile_by_uuid_mongo(uuid):
 def add_profile_mongo(uuid, username,context,description,firstname, lastname,publickey, email):
 	db.Profile.insert({"uuid":uuid, "username":username,"context":context, "description":description, "firstname":firstname, "lastname":lastname, "publickey":publickey,"email":email})
 	return "add a new profile successfully"
+
+
+def add_profile(uuid, username,context,description,firstname, lastname,publickey, email):
+	return PROFILE(uuid,username,context,description,firstname,lastname,publickey,email)
