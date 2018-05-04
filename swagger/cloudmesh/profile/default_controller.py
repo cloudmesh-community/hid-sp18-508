@@ -43,8 +43,8 @@ def get_profile_by_uuid_mongo(uuid):
 	for each in db.Profile.find({'uuid':uuid}):
 		return (each['uuid'], each['username'], each['context'],each['description'],each['firstname'],each['lastname'],each['publickey'],each['email'])
 
-def add_profile_mongo(uuid, username,context,description,firstname, lastname,publickey, email):
-	db.Profile.insert({"uuid":uuid, "username":username,"context":context, "description":description, "firstname":firstname, "lastname":lastname, "publickey":publickey,"email":email})
+def add_profile_mongo(uuid, username,context,description,firstname, lastname,publickey):
+	db.Profile.insert({"uuid":uuid, "username":username,"context":context, "description":description, "firstname":firstname, "lastname":lastname, "publickey":publickey,"email":"yy@iu.edu"})
 	return "add a new profile successfully"
 
 
