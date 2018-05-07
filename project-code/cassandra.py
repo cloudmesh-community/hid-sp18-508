@@ -1,3 +1,5 @@
+#give credit to "xidui is very lazy" from github.io (https://xidui.github.io/)
+#using the code structure to write result data to file
 from cassandra.cluster import Cluster
 import time
 import sys, getopt

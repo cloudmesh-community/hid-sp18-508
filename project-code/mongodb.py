@@ -1,3 +1,5 @@
+#give credit to "xidui is very lazy" from github.io (https://xidui.github.io/)
+#using the code structure to write result data to file
 import pymongo
 from pymongo import MongoClient
 import sys, getopt
