@@ -41,6 +41,17 @@ focuses on Availability while MongoDB focuses more on Consistency. So there
  of concept (POC) in the environment in which the database will run is the 
  best way to evaluate platforms~\cite{hid-sp18-508-benchmarking}.''
 
+\section{Background}
+The object structure is different. In MongoDB, object consists of properties
+ just like class in the obejct-oriented programming language. In Cassandra,
+  tables have rows and columns, which is more traditional.
+
+The structure of master and slave is different. In MongoDB, there is only 
+one master. If the master is down, one of the slaves will become the new
+ master. In Cassandra, there are multiple masters. If one of them is down,
+  the cluster still works, which provides higher 
+  availability.~\cite{hid-sp18-508-background}.
+
 \section{Technology Used - Software}
 This section describe the technologies that has been used through out 
 the project.
@@ -78,7 +89,8 @@ schemas''~\cite{hid-sp18-508-mongodb}.
 
 The following shows the reason to choose MongoDB:
 
-``Document Oriented Storage ? Data is stored in the form of JSON style documents.
+``Document Oriented Storage ? Data is stored in the form of 
+JSON style documents.
 
 Index on any attribute
 
@@ -106,6 +118,7 @@ User Data Management
 Data Hub''~\cite{hid-sp18-508-mon}. 
 
 
+
 \section{Technology Used - Hardware}
 This section describe the technologies that has been used through out 
 the project.
@@ -126,7 +139,8 @@ as a game machine or a platform to learn programming or a
 server~\cite{hid-sp18-508-raspberryPi}. Since it can be considered as a
 computer just like someone's own personal computer, it can be considered 
 exactly the same as PC. Furthermore, using Raspberry Pi as a server can
-have  several advantages. It can ``provide you with a low-cost, silent, non-heating
+have  several advantages. It can ``provide you with a low-cost, silent, 
+non-heating
  machine that fits easily into a room, and with very low power consumption of
  electricity''~\cite{hid-sp18-508-raspberryServer}.
 
@@ -218,14 +232,16 @@ cqlsh:dev$>$ insert into test(uid) values('1');
 \subsection{Deploy Cassandra on Ubuntu 14.04}
 
 Some steps are retrieved from https://www.digitalocean.com/community/
-tutorials/how-to-install-cassandra-and-run-a-single-node-cluster-on-ubuntu-14-04
+tutorials/how-to-install-cassandra-and-run-a-single-node-cluster-
+on-ubuntu-14-04
 
 Installing Cassandra
 
 echo deb http://www.apache.org/dist/cassandra/debian 22x main | sudo tee -a 
 /etc/apt/sources.list.d/cassandra.sources.list
 
-Add the public key using this pair of commands, which must be run one after the other
+Add the public key using this pair of commands, which must be run one
+ after the other
 
 gpg --keyserver pgp.mit.edu --recv-keys F758CE318D77295D
 
@@ -280,10 +296,12 @@ Ensure the location of the binaries is in the PATH variable.
 The MongoDB binaries are in the bin/ directory of the archive. To ensure
  that the binaries are in your PATH, you can modify your PATH.
 
-For example, you can add the following line to your shell?s rc file (e.g. ~/.bashrc):
+For example, you can add the following line to your shell?s rc file 
+(e.g. ~/.bashrc):
 
 $export PATH=<mongodb-install-directory>/bin:PATH$
-Replace $<mongodb-install-directory>$ with the path to the extracted MongoDB archive.
+Replace $<mongodb-install-directory>$ with the path to the extracted
+ MongoDB archive.
 
 
 \subsection{Deploy MongoDB on Ubuntu 14.04}
@@ -293,7 +311,8 @@ Some steps are retrieved from https://docs.mongodb.com/manual/tutorial
 Install MongoDB Community on Ubuntu
 Import the public key used by the package management system
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 
+2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 Create a list file for MongoDB
 
 echo deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty
@@ -336,14 +355,16 @@ Setup an Ubuntu SSO account
 
 3. Import an SSH key into your Ubuntu SSO accout 
 
-Create installation medias for Ubuntu Core on Mac OS, some steps are copied from
+Create installation medias for Ubuntu Core on Mac OS, some steps are 
+copied from
 https://developer.ubuntu.com/core/get-started/installation-medias
 
 Download Raspberry Pi 3
 
 Insert your SD card or USB flash drive
 
-Open a terminal window (Go to Application -> Utilities, you will find the Terminal 
+Open a terminal window (Go to Application -> Utilities, you will 
+find the Terminal 
 app there), then run the following command:
 
  diskutil list
@@ -355,11 +376,13 @@ diskutil unmountDisk <drive address>
 
 You can now copy the image to the SD card, using the following command:
 
-sudo sh -c $'xzcat ~/Downloads/<image file> | sudo dd of=<drive address> bs=32m'$
+sudo sh -c $'xzcat ~/Downloads/<image file> | sudo dd of=<drive address> 
+bs=32m'$
 
 \section{Benchmark}
 Choose MongoDB as backend first, then use Cassandra as backend. 
-Choose Macintosh first, then do same job on Raspberry Pi and finally on Google Cloud.
+Choose Macintosh first, then do same job on Raspberry Pi and finally on
+ Google Cloud.
 The performance metrics include: 
 
 1. How fast can it process when using different backends
@@ -619,7 +642,8 @@ Compare search 10000 data 1000 times on Google Cloud~\ref{f:fly}.
   (Scenario 18 compare with Scenario 35)}\label{f:fly}
 \end{figure}
 
-Compare insert 1000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f:fly}.
+Compare insert 1000 data 1000 times on Mac, Raspberry Pi and Google 
+Cloud~\ref{f:fly}.
 
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]
@@ -629,7 +653,8 @@ Compare insert 1000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f
 \end{figure}
 
 
-Compare insert 5000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f:fly}.
+Compare insert 5000 data 1000 times on Mac, Raspberry Pi and Google
+ Cloud~\ref{f:fly}.
 
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]
@@ -639,7 +664,8 @@ Compare insert 5000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f
 \end{figure}
 
 
-Compare insert 10000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f:fly}.
+Compare insert 10000 data 1000 times on Mac, Raspberry Pi and Google 
+Cloud~\ref{f:fly}.
 
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]
@@ -648,7 +674,8 @@ Compare insert 10000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{
   (Scenario 3, 9 compare with Scenario 15)}\label{f:fly}
 \end{figure}
 
-Compare search 1000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f:fly}.
+Compare search 1000 data 1000 times on Mac, Raspberry Pi and Google
+ Cloud~\ref{f:fly}.
 
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]
@@ -658,7 +685,8 @@ Compare search 1000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f
 \end{figure}
 
 
-Compare search 5000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f:fly}.
+Compare search 5000 data 1000 times on Mac, Raspberry Pi and Google 
+Cloud~\ref{f:fly}.
 
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]
@@ -668,12 +696,14 @@ Compare search 5000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f
 \end{figure}
 
 
-Compare search 10000 data 1000 times on Mac, Raspberry Pi and Google Cloud~\ref{f:fly}.
+Compare search 10000 data 1000 times on Mac, Raspberry Pi and Google 
+Cloud~\ref{f:fly}.
 
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]
   {images/search_comp_10000_three.jpg}
-  \caption{Search 10000 data 1000 times on  Mac, Raspberry Pi and Google Cloud
+  \caption{Search 10000 data 1000 times on  Mac, Raspberry Pi and Google
+   Cloud
   (Scenario 6, 12 compare with Scenario 18)}\label{f:fly}
 \end{figure}
 
@@ -702,7 +732,8 @@ The average search time of mongoDB is 0.03 ms, while the average
 insert time of 
 Cassandra is 5 ms.
 
-However, since this test are run on Macintosh parallely, they impact each other's 
+However, since this test are run on Macintosh parallely, they impact 
+each other's 
 performance.
 
 \subsection{Scenario 3, 6, 21 and 24}
@@ -747,9 +778,6 @@ Cassandra is 4.5 ms.
 The average search time of mongoDB is 0.04 ms, while the average 
 insert time of 
 Cassandra is 6 ms.
-
-However, since this test are run on Macintosh parallely, they impact each other's 
-performance.
 
 \subsection{Scenario 9, 12, 27 and 30}
 Insert and search 10000 data 1000 times on Macintosh 
@@ -840,6 +868,14 @@ Google Cloud
  is 2.4 ms while the average insert time on  Raspberry Pi is 5.4ms.
  
 Overall,  performance on Raspberry Pi is  always the worst.
+
+\section{Future Work}
+We can compare MongoDB and Cassandra with other NoSQL on this
+three platform used. 
+Besides, we can deploy MongoDB and Cassandra on other platform.
+For exampl, we can use more than one Raspberry Pi to build a cluster,
+or we can use more than one VM instance on Google Cloud.
+
 
 
 \begin{acks}
