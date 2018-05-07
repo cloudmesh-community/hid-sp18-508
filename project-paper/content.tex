@@ -14,11 +14,14 @@
 \email{yueguo@iu.edu}
 
 \begin{abstract}
-This project paper shows the proposal that needed in project, which 
-provides the goal, the design, the scenarios and the expectations.
+This project is to compare the performance of Cassandra and MongoDB 
+under different coditions and different operations. In this project, Cassandra
+ and MongoDB are deployed in three different platform, Macintosh macOS 
+ High Sierra, Google Cloud Ubuntu 14.04 and Raspberry pi Model B Ubuntu 
+ 16.04.
 \end{abstract}
 
-\keywords{Cassandra, MongoDB, hid-sp18-508}
+\keywords{Cassandra, MongoDB, Raspberry Pi, Google Cloud, hid-sp18-508}
 
 
 \maketitle
@@ -38,10 +41,92 @@ focuses on Availability while MongoDB focuses more on Consistency. So there
  of concept (POC) in the environment in which the database will run is the 
  best way to evaluate platforms~\cite{hid-sp18-508-benchmarking}.''
 
+\section{Technology Used}
+This section describe the technologies that has been used through out 
+the project.
+
+\subsection{Cassandra}
+Apache Cassandra is a kind of distributed NoSQL database management 
+system, which is free and open source. It can handle a large amount of 
+data on a large number of servers, which can provide high quality and no 
+single point of failure~\cite{hid-sp18-508-cassandra}. 
+
+\subsection{MongoDB}
+MongoDB is also a king of NoSQL database management system, which 
+is free and open source. Besides, it is a document-oriented database 
+program. ``MongoDB uses JSON-like documents with 
+schemas''~\cite{hid-sp18-508-mongodb}.
+
+\subsection{Raspberry Pi}
+Raspberry Pi can be considered as a small computer that can be used 
+as a game machine or a platform to learn programming or a 
+server~\cite{hid-sp18-508-raspberryPi}.
+
+The hardware used for Raspberry Pi consists of: 
+
+one Raspberry Pi 3 Model B computer
+The pi is shown in following Figure~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/pi.jpeg}
+  \caption{Raspberry Pi 3 Model B}\label{f:fly}
+\end{figure}
+
+
+one AmazonBasics High-speed HDMI cable
+
+one Elecrow RPA050 HDMI 5-inch 800*480 TFT LCD Display with Touch
+ Screen Monitor for Raspberry Pi
+ The monitor is shown in following Figure~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/display.jpeg}
+  \caption{Raspberry Pi 3 Model B}\label{f:fly}
+\end{figure}
+
+one CanaKit 5V 2.5A Raspberry Pi 3 Model B Power Supply
+
+one Happy Hacking keyboard
+
+\subsection{Google Cloud}
+Google Cloud provides a series of modular cloud services alongside a lot of
+ management tools~\cite{hid-sp18-508-googleCloud}. Although
+  it is not open source and free, when open an account,
+ it provides three hundred dollar which can be used in the first year.
+ 
+ \section{Deployment}
+ More details are on the github.
+\subsection{Deploy Cassandra}
+
+Download Cassandra archive package from website
+
+Decompress and install Cassandra 
+
+Switch to Cassandra bin directory and start up Cassandra
+
+\subsection{Deploy MongoDB }
+
+Import the public key used by the package mangement  system
+
+Create a list file for MongoDB
+
+Reload local package database
+
+Install the MongoDB packages
+
+\subsection{Deploy Raspberry Pi}
+
+Setup an Ubuntu SSO account
+
+Import an SSH key into Ubuntu SSO account
+
+Create installation medias for Ubuntu Core 
+
+burn Ubuntu into SD card
 
 \section{Design}
-Choose MongoDb as backend first, then use Cassandra as backend. Use the adult
- data from UCI Machine Learning Repository to test. The performance metrics include: 
+Choose MongoDB as backend first, then use Cassandra as backend. 
+The performance metrics include: 
 
 1. How fast can it process when using different backends
 
@@ -52,49 +137,194 @@ sustainability.
 
 Using server connected to MongoDB:
 
-1. Insert all data
+1. Insert 10000 data 1000 times
 
-2. Run search operation every second
+2. Seach 10000 data 1000 times
 
-3. 10 clients run search operation at the same time
+3. Insert 5000 data 1000 times
 
-4. 5 clients run search operation, 5 clients run delete operation at the same time
+4. Search 5000 data 1000 times
 
-5. 5 clients run search operation, 5 clients run insert operation at the same time
+5. Insert 1000 data 1000 times
 
-6. 5 clients run insert operation, 5 clients run delete operation at the same time
+6. Search 1000 data 1000 times
 
+7. Two thread insert 10000 data and search 10000 data at the same time
+
+8. Two thread insert 5000 data and search 5000 data at the same time
+
+9. Two thread insert 1000 data and search 1000 data at the same time
 
 Using server connected to Cassandra:
 
-1. Insert all data
+1. Insert 10000 data 1000 times
 
-2. Run search operation every second
+2. Search 10000 data 1000 times
 
-3. 10 clients run search operation at the same time
+3. Insert 5000 data 1000 times
 
-4. 5 clients run search operation, 5 clients run delete operation at the same time
+4. Search 5000 data 1000 times
 
-5. 5 clients run search operation, 5 clients run insert operation at the same time
+5. Insert 1000 data 1000 times
 
-5. 5 clients run insert operation, 5 clients run delete operation at the same time
+6. Search 1000 data 1000 times
 
+7. Two thread insert 10000 data and search 10000 data at the same time
 
-\section{Results}
+8. Two thread insert 5000 data and search 5000 data at the same time
+
+9. Two thread insert 1000 data and search 1000 data at the same time
+
+\section{Assessment}
 What parameter:
 
-use time [options] COMMAND [arguments], which can shows four kind of information:
- Time resources, Memory resources, IO resources and Command info.
+use time package, time\_after - time\_pre 
 
 How to process:
 
-Redirect the output of time command into the specified file. And then write a 
-program to analyze those outputs and do some statistics on those results. 
+Redirect the output of time result into the specified file. Use Matlab program 
+and compare the output of MongoDB and Cassandra to draw some plots. 
+
+\section{Results}
+Compare insert 1000 data 1000 times on Macintosh~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/insert_comp_1000.jpg}
+  \caption{Insert 1000 data 1000 times on Macintosh }\label{f:fly}
+\end{figure}
+
+Compare insert 5000 data 1000 times on Macintos~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/insert_comp_5000.jpg}
+  \caption{Insert 5000 data 1000 times on Macintosh}\label{f:fly}
+\end{figure}
+
+Compare insert 10000 data 1000 times on Macintos~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/insert_comp_10000.jpg}
+  \caption{Insert 10000 data 1000 times on Macintosh}\label{f:fly}
+\end{figure}
+
+Compare serach 1000 data 1000 times on Macintosh~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/search_comp_1000.jpg}
+  \caption{Serach 1000 data 1000 times on Macintosh }\label{f:fly}
+\end{figure}
+
+Compare serach 5000 data 1000 times on Macintos~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/search_comp_5000.jpg}
+  \caption{Serach 5000 data 1000 times on Macintosh}\label{f:fly}
+\end{figure}
+
+Compare serach 10000 data 1000 times on Macintos~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/search_comp_10000.jpg}
+  \caption{Serach 10000 data 1000 times on Macintosh}\label{f:fly}
+\end{figure}
+
+
+
+Compare insert 1000 data 1000 times on Raspberry Pi~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/insert_comp_1000_pi.jpg}
+  \caption{Insert 1000 data 1000 times on Raspberry Pi }\label{f:fly}
+\end{figure}
+
+Compare insert 5000 data 1000 times on Raspberry Pi~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/insert_comp_5000_pi.jpg}
+  \caption{Insert 5000 data 1000 times on Raspberry Pi}\label{f:fly}
+\end{figure}
+
+Compare insert 10000 data 1000 times on Raspberry Pi~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/insert_comp_10000_pi.jpg}
+  \caption{Insert 10000 data 1000 times on Raspberry Pi}\label{f:fly}
+\end{figure}
+
+Compare serach 1000 data 1000 times on Raspberry Pi~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/search_comp_1000_pi.jpg}
+  \caption{Serach 1000 data 1000 times on Raspberry Pi }\label{f:fly}
+\end{figure}
+
+Compare serach 5000 data 1000 times on Raspberry Pi~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/search_comp_5000_pi.jpg}
+  \caption{Serach 5000 data 1000 times on Raspberry Pi}\label{f:fly}
+\end{figure}
+
+Compare serach 10000 data 1000 times on Raspberry Pi~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/search_comp_10000_pi.jpg}
+  \caption{Serach 10000 data 1000 times on Raspberry Pi}\label{f:fly}
+\end{figure}
+
+Compare insert 1000 data 1000 times on Google Cloud~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/insert_comp_1000_google.jpg}
+  \caption{Insert 1000 data 1000 times on Google Cloud}\label{f:fly}
+\end{figure}
+
+Compare insert 5000 data 1000 times on Google Cloud~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/insert_comp_5000_google.jpg}
+  \caption{Insert 5000 data 1000 times on Google Cloud}\label{f:fly}
+\end{figure}
+
+Compare search 1000 data 1000 times on Google Cloud~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/search_comp_1000_google.jpg}
+  \caption{Search 1000 data 1000 times on Google Cloud}\label{f:fly}
+\end{figure}
+
+Compare search 5000 data 1000 times on Google Cloud~\ref{f:fly}.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]
+  {images/search_comp_5000_google.jpg}
+  \caption{Search 5000 data 1000 times on Google Cloud}\label{f:fly}
+\end{figure}
 
 
 \section{Conclusion}
-Compare the performance of MongoDB and Cassandra, especially the consistency 
-and availability.
+Compare the performance of MongoDB and Cassandra. 
+
+Cassandra takes more time to insert and search, especially search. 
+
+However, on Raspberry Pi the difference of their performance become closer.
+
+The performance of MongoDB and Cassandra on Google Cloud is more stable.
+
 
 \begin{acks}
 
