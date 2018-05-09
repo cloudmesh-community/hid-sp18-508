@@ -1,6 +1,24 @@
 % status: 0
 % chapter: Database
 
+
+\def\paperstatus{80} % a number from 0-100 indicating your status. 100
+                % means completed
+\def\paperchapter{Database} % This section is typically a single keyword. from
+                   % a small list. Consult with theinstructors about
+                   % yours. They typically fill it out once your first
+                   % text has been reviewed.
+\def\hid{hid-sp18-508} % all hids of the authors of this
+                                % paper. The paper must only be in one
+                                % authors directory and all other
+                                % authors contribute to it in that
+                                % directory. That authors hid must be
+                                % listed first
+\def\volume{9} % the volume of the proceedings in which this paper is to
+           % be included
+
+\def\locator{\hid, Volume: \volume, Chapter: \paperchapter, Status: \paperstatus. \newline}
+
 \title{Casandra and MongoDB Performance Comparison}
 
 \author{Yue Guo}
@@ -21,7 +39,7 @@ under different coditions and different operations. In this project, Cassandra
  16.04.
 \end{abstract}
 
-\keywords{Cassandra, MongoDB, Raspberry Pi, Google Cloud, hid-sp18-508}
+\keywords{\locator\ Cassandra, MongoDB, Raspberry Pi, Google Cloud}
 
 
 \maketitle
